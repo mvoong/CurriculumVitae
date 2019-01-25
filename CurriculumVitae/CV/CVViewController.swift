@@ -68,7 +68,7 @@ extension CVViewController: UITableViewDelegate {
 extension CVDescriptionItem {
     
     func dequeueCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionIdentifier", for: indexPath) as! CVDescriptionCell
+        let cell = tableView.dequeueReusableCell(type: CVDescriptionCell.self, identifier: "DescriptionIdentifier", indexPath: indexPath)
         cell.label?.text = self.string
         return cell
     }
