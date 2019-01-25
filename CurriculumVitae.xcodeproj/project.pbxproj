@@ -12,7 +12,17 @@
 		2750A19521FA1BFF00D744B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2750A19321FA1BFF00D744B8 /* Main.storyboard */; };
 		2750A19721FA1C0000D744B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2750A19621FA1C0000D744B8 /* Assets.xcassets */; };
 		2750A19A21FA1C0000D744B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2750A19821FA1C0000D744B8 /* LaunchScreen.storyboard */; };
-		2750A1A521FA1C0000D744B8 /* CurriculumVitaeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1A421FA1C0000D744B8 /* CurriculumVitaeTests.swift */; };
+		2750A1B121FA220600D744B8 /* CurriculumVitae.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B021FA220600D744B8 /* CurriculumVitae.swift */; };
+		2750A1B321FA222400D744B8 /* PastExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B221FA222400D744B8 /* PastExperience.swift */; };
+		2750A1B521FA228300D744B8 /* PastExperienceDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B421FA228300D744B8 /* PastExperienceDate.swift */; };
+		2750A1B821FA233700D744B8 /* RequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B721FA233700D744B8 /* RequestExecuter.swift */; };
+		2750A1BA21FA254100D744B8 /* ModelFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B921FA254100D744B8 /* ModelFetcher.swift */; };
+		2750A1BC21FB31D800D744B8 /* RequestExecuterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1BB21FB31D800D744B8 /* RequestExecuterTests.swift */; };
+		2750A1BF21FB322900D744B8 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1BE21FB322900D744B8 /* URLSessionProtocol.swift */; };
+		2750A1C121FB32D100D744B8 /* StubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C021FB32D100D744B8 /* StubURLSession.swift */; };
+		2750A1C321FB334200D744B8 /* SpyURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C221FB334200D744B8 /* SpyURLSessionDataTask.swift */; };
+		2750A1C521FB364900D744B8 /* ModelFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C421FB364900D744B8 /* ModelFetcherTests.swift */; };
+		2750A1C721FB369700D744B8 /* StubRequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C621FB369700D744B8 /* StubRequestExecuter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +44,18 @@
 		2750A19921FA1C0000D744B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2750A19B21FA1C0000D744B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2750A1A021FA1C0000D744B8 /* CurriculumVitaeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurriculumVitaeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2750A1A421FA1C0000D744B8 /* CurriculumVitaeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumVitaeTests.swift; sourceTree = "<group>"; };
 		2750A1A621FA1C0000D744B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2750A1B021FA220600D744B8 /* CurriculumVitae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumVitae.swift; sourceTree = "<group>"; };
+		2750A1B221FA222400D744B8 /* PastExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastExperience.swift; sourceTree = "<group>"; };
+		2750A1B421FA228300D744B8 /* PastExperienceDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastExperienceDate.swift; sourceTree = "<group>"; };
+		2750A1B721FA233700D744B8 /* RequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuter.swift; sourceTree = "<group>"; };
+		2750A1B921FA254100D744B8 /* ModelFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFetcher.swift; sourceTree = "<group>"; };
+		2750A1BB21FB31D800D744B8 /* RequestExecuterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuterTests.swift; sourceTree = "<group>"; };
+		2750A1BE21FB322900D744B8 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		2750A1C021FB32D100D744B8 /* StubURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubURLSession.swift; sourceTree = "<group>"; };
+		2750A1C221FB334200D744B8 /* SpyURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyURLSessionDataTask.swift; sourceTree = "<group>"; };
+		2750A1C421FB364900D744B8 /* ModelFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFetcherTests.swift; sourceTree = "<group>"; };
+		2750A1C621FB369700D744B8 /* StubRequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRequestExecuter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +97,8 @@
 		2750A18E21FA1BFF00D744B8 /* CurriculumVitae */ = {
 			isa = PBXGroup;
 			children = (
+				2750A1B621FA22E800D744B8 /* Networking */,
+				2750A1AF21FA21F200D744B8 /* Entities */,
 				2750A18F21FA1BFF00D744B8 /* AppDelegate.swift */,
 				2750A19121FA1BFF00D744B8 /* ViewController.swift */,
 				2750A19321FA1BFF00D744B8 /* Main.storyboard */,
@@ -90,10 +112,42 @@
 		2750A1A321FA1C0000D744B8 /* CurriculumVitaeTests */ = {
 			isa = PBXGroup;
 			children = (
-				2750A1A421FA1C0000D744B8 /* CurriculumVitaeTests.swift */,
+				2750A1BD21FB321700D744B8 /* Stubs */,
 				2750A1A621FA1C0000D744B8 /* Info.plist */,
+				2750A1BB21FB31D800D744B8 /* RequestExecuterTests.swift */,
+				2750A1C421FB364900D744B8 /* ModelFetcherTests.swift */,
 			);
 			path = CurriculumVitaeTests;
+			sourceTree = "<group>";
+		};
+		2750A1AF21FA21F200D744B8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2750A1B021FA220600D744B8 /* CurriculumVitae.swift */,
+				2750A1B221FA222400D744B8 /* PastExperience.swift */,
+				2750A1B421FA228300D744B8 /* PastExperienceDate.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2750A1B621FA22E800D744B8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2750A1B721FA233700D744B8 /* RequestExecuter.swift */,
+				2750A1B921FA254100D744B8 /* ModelFetcher.swift */,
+				2750A1BE21FB322900D744B8 /* URLSessionProtocol.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2750A1BD21FB321700D744B8 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				2750A1C021FB32D100D744B8 /* StubURLSession.swift */,
+				2750A1C221FB334200D744B8 /* SpyURLSessionDataTask.swift */,
+				2750A1C621FB369700D744B8 /* StubRequestExecuter.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +203,7 @@
 					};
 					2750A19F21FA1C0000D744B8 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 2750A18B21FA1BFF00D744B8;
 					};
 				};
@@ -199,6 +254,12 @@
 			files = (
 				2750A19221FA1BFF00D744B8 /* ViewController.swift in Sources */,
 				2750A19021FA1BFF00D744B8 /* AppDelegate.swift in Sources */,
+				2750A1B121FA220600D744B8 /* CurriculumVitae.swift in Sources */,
+				2750A1B521FA228300D744B8 /* PastExperienceDate.swift in Sources */,
+				2750A1BF21FB322900D744B8 /* URLSessionProtocol.swift in Sources */,
+				2750A1BA21FA254100D744B8 /* ModelFetcher.swift in Sources */,
+				2750A1B321FA222400D744B8 /* PastExperience.swift in Sources */,
+				2750A1B821FA233700D744B8 /* RequestExecuter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2750A1A521FA1C0000D744B8 /* CurriculumVitaeTests.swift in Sources */,
+				2750A1C121FB32D100D744B8 /* StubURLSession.swift in Sources */,
+				2750A1C721FB369700D744B8 /* StubRequestExecuter.swift in Sources */,
+				2750A1BC21FB31D800D744B8 /* RequestExecuterTests.swift in Sources */,
+				2750A1C321FB334200D744B8 /* SpyURLSessionDataTask.swift in Sources */,
+				2750A1C521FB364900D744B8 /* ModelFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +462,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4ZS9QTGL7L;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CurriculumVitaeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -407,6 +473,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.meidi.CurriculumVitaeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurriculumVitae.app/CurriculumVitae";
@@ -418,8 +486,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4ZS9QTGL7L;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CurriculumVitaeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,6 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.meidi.CurriculumVitaeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurriculumVitae.app/CurriculumVitae";
