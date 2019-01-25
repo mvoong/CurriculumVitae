@@ -14,4 +14,9 @@ struct PastExperienceDate: Codable {
     let month: Int
 
     let year: Int
+    
+    func displayableDate() -> String {
+        // In a real app we could pass in a date formatter for a more friendly string
+        return "\(self.month) \(self.year)"
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  CurriculumVitaeRequest.swift
+//  ModelFetcher.swift
 //  CurriculumVitae
 //
 //  Created by Michael Voong on 24/01/2019.
@@ -16,10 +16,10 @@ enum ModelFetcherError: Error {
 
 protocol ModelFetcherProtocol {
     
-    func fetch<T>(type: T.Type, url: URL, completion: @escaping (T?, Error?) -> Void) where T: Decodable
+    func fetch<T>(type: T.Type, url: URL, completion: @escaping (T?, ModelFetcherError?) -> Void) where T: Decodable
 }
 
-struct ModelFetcher {
+struct ModelFetcher: ModelFetcherProtocol {
     
     private let requestExecuter: RequestExecuterProtocol
     private let jsonDecoder = JSONDecoder()
