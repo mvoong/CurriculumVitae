@@ -22,7 +22,7 @@ class ModelFetcherTests: XCTestCase {
     func testFetchCallsRequestJSONWithCorrectURL() {
         let fetcher = ModelFetcher(requestExecuter: self.stubRequestExecuter)
         
-        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { _, _ in }
+        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { _ in }
         
         XCTAssertEqual(self.stubRequestExecuter.requestJSONCalled?.url, self.exampleURL)
     }
@@ -31,13 +31,17 @@ class ModelFetcherTests: XCTestCase {
         let fetcher = ModelFetcher(requestExecuter: self.stubRequestExecuter)
         let error = NSError(domain: "", code: 0, userInfo: nil)
         
-        var completionCalledWithError: ModelFetcherError?
-        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { _, error in
-            completionCalledWithError = error
+        var completionCalledWithResult: ModelFetcher.Result<ExampleDecodable>?
+        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
+            completionCalledWithResult = result
         }
-        self.stubRequestExecuter.requestJSONCalled?.completion(nil, error)
+        self.stubRequestExecuter.requestJSONCalled?.completion(.failure(error))
         
-        XCTAssertEqual(completionCalledWithError, ModelFetcherError.networkError)
+        if case .failure(let error)? = completionCalledWithResult {
+            XCTAssertEqual(error, .networkError)
+        } else {
+            XCTFail()
+        }
     }
     
     func testFetchCallsCompletionWithDecodedModel() {
@@ -45,26 +49,32 @@ class ModelFetcherTests: XCTestCase {
         let json = """
 { "string": "Example string" }
 """
+        let data = json.data(using: .utf8)!
         
-        var completionCalledWithModel: ExampleDecodable?
-        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { model, _ in
-            completionCalledWithModel = model
+        var completionCalledWithResult: ModelFetcher.Result<ExampleDecodable>?
+        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
+            completionCalledWithResult = result
         }
-        self.stubRequestExecuter.requestJSONCalled?.completion(json.data(using: .utf8), nil)
+        self.stubRequestExecuter.requestJSONCalled?.completion(.success(data))
         
-        XCTAssertEqual(completionCalledWithModel?.string, "Example string")
+        if case .success(let object)? = completionCalledWithResult {
+            XCTAssertEqual(object.string, "Example string")
+        }
     }
     
     func testFetchCallsCompletionWithDecodingError() {
         let fetcher = ModelFetcher(requestExecuter: self.stubRequestExecuter)
+        let data = "".data(using: .utf8)!
         
-        var completionCalledWithError: ModelFetcherError?
-        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { _, error in
-            completionCalledWithError = error
+        var completionCalledWithResult: ModelFetcher.Result<ExampleDecodable>?
+        fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
+            completionCalledWithResult = result
         }
-        self.stubRequestExecuter.requestJSONCalled?.completion("".data(using: .utf8), nil)
+        self.stubRequestExecuter.requestJSONCalled?.completion(.success(data))
         
-        XCTAssertEqual(completionCalledWithError, ModelFetcherError.decodingError)
+        if case .failure(let error)? = completionCalledWithResult {
+            XCTAssertEqual(error, .decodingError)
+        }
     }
 
 }

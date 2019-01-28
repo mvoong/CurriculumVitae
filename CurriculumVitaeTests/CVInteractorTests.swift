@@ -29,21 +29,9 @@ class CVInteractorTests: XCTestCase {
         interactor.requestCV { cv in
             completionCalledWithCV = cv
         }
-        self.stubModelFetcher.fetchCalled?.completion(cv, nil)
+        self.stubModelFetcher.fetchCalled?.completion(.success(cv))
         
         XCTAssertNotNil(completionCalledWithCV)
-    }
-    
-    func testRequestCVDoesNotCallsCompletion() {
-        let interactor = CVInteractor(modelFetcher: self.stubModelFetcher)
-        
-        var completionCalled = false
-        interactor.requestCV { cv in
-            completionCalled = true
-        }
-        self.stubModelFetcher.fetchCalled?.completion(nil, nil)
-        
-        XCTAssertFalse(completionCalled)
     }
     
     // Integration tests

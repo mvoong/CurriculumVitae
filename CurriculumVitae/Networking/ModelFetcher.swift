@@ -8,18 +8,24 @@
 
 import Foundation
 
-enum ModelFetcherError: Error {
-    
-    case networkError
-    case decodingError
-}
-
 protocol ModelFetcherProtocol {
     
-    func fetch<T>(type: T.Type, url: URL, completion: @escaping (T?, ModelFetcherError?) -> Void) where T: Decodable
+    func fetch<T>(type: T.Type, url: URL, completion: @escaping (ModelFetcher.Result<T>) -> Void) where T: Decodable
 }
 
 struct ModelFetcher: ModelFetcherProtocol {
+
+    enum ModelFetcherError: Error {
+        
+        case networkError
+        case decodingError
+    }
+    
+    enum Result<T> {
+        
+        case success(T)
+        case failure(ModelFetcherError)
+    }
     
     private let requestExecuter: RequestExecuterProtocol
     private let jsonDecoder = JSONDecoder()
@@ -28,20 +34,19 @@ struct ModelFetcher: ModelFetcherProtocol {
         self.requestExecuter = requestExecuter
     }
     
-    func fetch<T>(type: T.Type, url: URL, completion: @escaping (T?, ModelFetcherError?) -> Void) where T: Decodable {
-        self.requestExecuter.requestJSON(url: url) { data, error in
-            if error != nil {
-                completion(nil, .networkError)
-                return
-            }
-            
-            if let data = data {
+    func fetch<T>(type: T.Type, url: URL, completion: @escaping (Result<T>) -> Void) where T: Decodable {
+        self.requestExecuter.requestJSON(url: url) { result in
+            switch result {
+            case .success(let data):
                 do {
                     let model = try self.jsonDecoder.decode(T.self, from: data)
-                    completion(model, nil)
+                    completion(.success(model))
                 } catch {
-                  completion(nil, .decodingError)
+                    completion(.failure(.decodingError))
+                    
                 }
+            case .failure:
+                completion(.failure(.networkError))
             }
         }
     }

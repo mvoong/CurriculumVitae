@@ -16,7 +16,7 @@ class RequestExecuterTests: XCTestCase {
     func testRequestJSONCreatesDataTaskWithCorrectURL() {
         let executer = RequestExecuter(urlSession: self.stubURLSession)
         
-        executer.requestJSON(url: URL(string: "https://www.example.com")!) { _, _ in }
+        executer.requestJSON(url: URL(string: "https://www.example.com")!) { _ in }
         
         XCTAssertEqual(self.stubURLSession.dataTaskCalled?.url.absoluteString, "https://www.example.com")
     }
@@ -24,42 +24,50 @@ class RequestExecuterTests: XCTestCase {
     func testRequestJSONCallsResumeOnDataTask() {
         let executer = RequestExecuter(urlSession: self.stubURLSession)
         
-        executer.requestJSON(url: URL(string: "https://www.example.com")!) { _, _ in }
+        executer.requestJSON(url: URL(string: "https://www.example.com")!) { _ in }
         
         XCTAssertTrue(self.stubURLSession.spyDataTask.resumeCalled)
     }
     
     func testRequestJSONCallsCompletionWithError() {
         let executer = RequestExecuter(urlSession: self.stubURLSession)
-        var completionCalledWithError: NSError?
+        var completionCalledWithResult: RequestExecuter.Result?
         let raisedError = NSError(domain: "", code: 0, userInfo: nil)
         
-        executer.requestJSON(url: URL(string: "https://www.example.com")!) { _, error in
-            completionCalledWithError = error as NSError?
+        executer.requestJSON(url: URL(string: "https://www.example.com")!) { result in
+            completionCalledWithResult = result
         }
         self.stubURLSession.dataTaskCalled?.completionHandler(nil, nil, raisedError)
         
-        XCTAssertEqual(completionCalledWithError, raisedError)
+        if case .failure(let error)? = completionCalledWithResult {
+            XCTAssertEqual(error as NSError, raisedError)
+        } else {
+            XCTFail()
+        }
     }
     
     func testRequestJSONCallsCompletionWithData() {
         let executer = RequestExecuter(urlSession: self.stubURLSession)
-        var completionCalledWithData: Data?
-        let data = Data()
+        var completionCalledWithResult: RequestExecuter.Result?
+        let responseData = Data()
         
-        executer.requestJSON(url: URL(string: "https://www.example.com")!) { data, _ in
-            completionCalledWithData = data
+        executer.requestJSON(url: URL(string: "https://www.example.com")!) { result in
+            completionCalledWithResult = result
         }
-        self.stubURLSession.dataTaskCalled?.completionHandler(data, nil, nil)
+        self.stubURLSession.dataTaskCalled?.completionHandler(responseData, nil, nil)
         
-        XCTAssertEqual(completionCalledWithData, data)
+        if case .success(let data)? = completionCalledWithResult {
+            XCTAssertEqual(data, responseData)
+        } else {
+            XCTFail()
+        }
     }
     
     func testRequestJSONDoesNotCallsCompletionWhenDataIsNil() {
         let executer = RequestExecuter(urlSession: self.stubURLSession)
         var completionCalled = false
         
-        executer.requestJSON(url: URL(string: "https://www.example.com")!) { _, _ in
+        executer.requestJSON(url: URL(string: "https://www.example.com")!) { _ in
             completionCalled = true
         }
         self.stubURLSession.dataTaskCalled?.completionHandler(nil, nil, nil)

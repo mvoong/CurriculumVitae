@@ -25,9 +25,13 @@ class CVInteractor: CVInteractorProtocol {
     }
     
     func requestCV(completion: @escaping (CurriculumVitae) -> Void) {
-        self.modelFetcher.fetch(type: CurriculumVitae.self, url: URL(string: CVInteractor.cv)!) { cv, _ in
-            if let cv = cv {
+        self.modelFetcher.fetch(type: CurriculumVitae.self, url: URL(string: CVInteractor.cv)!) { result in
+            switch result {
+            case .success(let cv):
                 completion(cv)
+            case .failure:
+                // To implement: call back to view controller to show error to user
+                break
             }
         }
     }
