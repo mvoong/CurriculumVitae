@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27328B8221FF129400601618 /* CVSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27328B8121FF129400601618 /* CVSection.swift */; };
+		27328B8421FF12A300601618 /* CVDescriptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27328B8321FF12A300601618 /* CVDescriptionItem.swift */; };
 		2750A19021FA1BFF00D744B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A18F21FA1BFF00D744B8 /* AppDelegate.swift */; };
 		2750A19521FA1BFF00D744B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2750A19321FA1BFF00D744B8 /* Main.storyboard */; };
 		2750A19721FA1C0000D744B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2750A19621FA1C0000D744B8 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27328B8121FF129400601618 /* CVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSection.swift; sourceTree = "<group>"; };
+		27328B8321FF12A300601618 /* CVDescriptionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDescriptionItem.swift; sourceTree = "<group>"; };
 		2750A18C21FA1BFF00D744B8 /* CurriculumVitae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurriculumVitae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2750A18F21FA1BFF00D744B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2750A19421FA1BFF00D744B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				2750A1D021FB3CEC00D744B8 /* CVInteractor.swift */,
 				2750A1CE21FB3CE500D744B8 /* CVPresenter.swift */,
 				2750A1D721FB4DCC00D744B8 /* CVDescriptionCell.swift */,
+				27328B8121FF129400601618 /* CVSection.swift */,
+				27328B8321FF12A300601618 /* CVDescriptionItem.swift */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -313,11 +319,13 @@
 				2750A1B121FA220600D744B8 /* CurriculumVitae.swift in Sources */,
 				2750A1B521FA228300D744B8 /* PastExperienceDate.swift in Sources */,
 				2750A1BF21FB322900D744B8 /* URLSessionProtocol.swift in Sources */,
+				27328B8221FF129400601618 /* CVSection.swift in Sources */,
 				2750A1BA21FA254100D744B8 /* ModelFetcher.swift in Sources */,
 				2750A1D821FB4DCC00D744B8 /* CVDescriptionCell.swift in Sources */,
 				2750A1B321FA222400D744B8 /* PastExperience.swift in Sources */,
 				2750A1D121FB3CEC00D744B8 /* CVInteractor.swift in Sources */,
 				2750A1EA21FB5CE800D744B8 /* UITableView+Helper.swift in Sources */,
+				27328B8421FF12A300601618 /* CVDescriptionItem.swift in Sources */,
 				2750A1B821FA233700D744B8 /* RequestExecuter.swift in Sources */,
 				2750A1CB21FB3A1000D744B8 /* MainRouter.swift in Sources */,
 			);

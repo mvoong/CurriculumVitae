@@ -13,17 +13,6 @@ protocol CVPresenterDelegate: class {
     func displaySections(_ sections: [CVSection])
 }
 
-struct CVSection: TableSection {
-    
-    let title: String?
-    let items: [TableItem]
-}
-
-struct CVDescriptionItem: TableItem {
-    
-    let string: String
-}
-
 class CVPresenter {
     
     weak var delegate: CVPresenterDelegate?
