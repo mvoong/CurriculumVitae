@@ -29,9 +29,9 @@ class RequestExecuterTests: XCTestCase {
         XCTAssertTrue(self.stubURLSession.spyDataTask.resumeCalled)
     }
     
-    func testRequestJSONCallsCompletionWithError() {
+    func testRequestJSONCallsCompletionWithFoundationError() {
         let executer = RequestExecuter(urlSession: self.stubURLSession)
-        var completionCalledWithResult: RequestExecuter.Result?
+        var completionCalledWithResult: Result<Data, RequestExecuter.RequestExecuterError>?
         let raisedError = NSError(domain: "", code: 0, userInfo: nil)
         
         executer.requestJSON(url: URL(string: "https://www.example.com")!) { result in
@@ -39,7 +39,7 @@ class RequestExecuterTests: XCTestCase {
         }
         self.stubURLSession.dataTaskCalled?.completionHandler(nil, nil, raisedError)
         
-        if case .failure(let error)? = completionCalledWithResult {
+        if case .failure(.foundationError(let error))? = completionCalledWithResult {
             XCTAssertEqual(error as NSError, raisedError)
         } else {
             XCTFail()
@@ -48,7 +48,7 @@ class RequestExecuterTests: XCTestCase {
     
     func testRequestJSONCallsCompletionWithData() {
         let executer = RequestExecuter(urlSession: self.stubURLSession)
-        var completionCalledWithResult: RequestExecuter.Result?
+        var completionCalledWithResult: Result<Data, RequestExecuter.RequestExecuterError>?
         let responseData = Data()
         
         executer.requestJSON(url: URL(string: "https://www.example.com")!) { result in

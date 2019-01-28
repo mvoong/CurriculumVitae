@@ -10,27 +10,26 @@ import Foundation
 
 protocol RequestExecuterProtocol {
     
-    func requestJSON(url: URL, completion: @escaping (RequestExecuter.Result) -> Void)
+    func requestJSON(url: URL, completion: @escaping (Result<Data, RequestExecuter.RequestExecuterError>) -> Void)
 }
 
 struct RequestExecuter: RequestExecuterProtocol {
     
-    private let urlSession: URLSessionProtocol
-    
-    enum Result {
+    enum RequestExecuterError: Error {
         
-        case success(Data)
-        case failure(Error)
+        case foundationError(Error)
     }
+    
+    private let urlSession: URLSessionProtocol
     
     init(urlSession: URLSessionProtocol = URLSession.shared) {
         self.urlSession = urlSession
     }
     
-    func requestJSON(url: URL, completion: @escaping (Result) -> Void) {
+    func requestJSON(url: URL, completion: @escaping (Result<Data, RequestExecuterError>) -> Void) {
         let task = self.urlSession.dataTask(with: url) { data, _, error in
             if let error = error {
-                completion(.failure(error))
+                completion(.failure(.foundationError(error)))
                 return
             }
             

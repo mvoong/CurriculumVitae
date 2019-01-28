@@ -11,9 +11,9 @@ import Foundation
 
 class StubRequestExecuter: RequestExecuterProtocol {
     
-    private(set) var requestJSONCalled: (url: URL, completion: (RequestExecuter.Result) -> Void)?
+    private(set) var requestJSONCalled: (url: URL, completion: (Result<Data, RequestExecuter.RequestExecuterError>) -> Void)?
     
-    func requestJSON(url: URL, completion: @escaping (RequestExecuter.Result) -> Void) {
+    func requestJSON(url: URL, completion: @escaping (Result<Data, RequestExecuter.RequestExecuterError>) -> Void) {
         self.requestJSONCalled = (url, completion)
     }
 }

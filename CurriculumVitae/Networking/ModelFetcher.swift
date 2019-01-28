@@ -10,7 +10,7 @@ import Foundation
 
 protocol ModelFetcherProtocol {
     
-    func fetch<T>(type: T.Type, url: URL, completion: @escaping (ModelFetcher.Result<T>) -> Void) where T: Decodable
+    func fetch<T>(type: T.Type, url: URL, completion: @escaping (Result<T, ModelFetcher.ModelFetcherError>) -> Void) where T: Decodable
 }
 
 struct ModelFetcher: ModelFetcherProtocol {
@@ -21,12 +21,6 @@ struct ModelFetcher: ModelFetcherProtocol {
         case decodingError
     }
     
-    enum Result<T> {
-        
-        case success(T)
-        case failure(ModelFetcherError)
-    }
-    
     private let requestExecuter: RequestExecuterProtocol
     private let jsonDecoder = JSONDecoder()
     
@@ -34,7 +28,7 @@ struct ModelFetcher: ModelFetcherProtocol {
         self.requestExecuter = requestExecuter
     }
     
-    func fetch<T>(type: T.Type, url: URL, completion: @escaping (Result<T>) -> Void) where T: Decodable {
+    func fetch<T>(type: T.Type, url: URL, completion: @escaping (Result<T, ModelFetcherError>) -> Void) where T: Decodable {
         self.requestExecuter.requestJSON(url: url) { result in
             switch result {
             case .success(let data):

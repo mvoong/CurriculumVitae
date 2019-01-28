@@ -31,11 +31,11 @@ class ModelFetcherTests: XCTestCase {
         let fetcher = ModelFetcher(requestExecuter: self.stubRequestExecuter)
         let error = NSError(domain: "", code: 0, userInfo: nil)
         
-        var completionCalledWithResult: ModelFetcher.Result<ExampleDecodable>?
+        var completionCalledWithResult: Result<ExampleDecodable, ModelFetcher.ModelFetcherError>?
         fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
             completionCalledWithResult = result
         }
-        self.stubRequestExecuter.requestJSONCalled?.completion(.failure(error))
+        self.stubRequestExecuter.requestJSONCalled?.completion(.failure(.foundationError(error)))
         
         if case .failure(let error)? = completionCalledWithResult {
             XCTAssertEqual(error, .networkError)
@@ -51,7 +51,7 @@ class ModelFetcherTests: XCTestCase {
 """
         let data = json.data(using: .utf8)!
         
-        var completionCalledWithResult: ModelFetcher.Result<ExampleDecodable>?
+        var completionCalledWithResult: Result<ExampleDecodable, ModelFetcher.ModelFetcherError>?
         fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
             completionCalledWithResult = result
         }
@@ -66,7 +66,7 @@ class ModelFetcherTests: XCTestCase {
         let fetcher = ModelFetcher(requestExecuter: self.stubRequestExecuter)
         let data = "".data(using: .utf8)!
         
-        var completionCalledWithResult: ModelFetcher.Result<ExampleDecodable>?
+        var completionCalledWithResult: Result<ExampleDecodable, ModelFetcher.ModelFetcherError>?
         fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
             completionCalledWithResult = result
         }
