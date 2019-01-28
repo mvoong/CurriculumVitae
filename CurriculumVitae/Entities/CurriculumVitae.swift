@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CurriculumVitae: Codable {
+struct CurriculumVitae: Decodable {
     
     let summary: String
     let topics: String

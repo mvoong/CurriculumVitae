@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PastExperienceDate: Codable {
+struct PastExperienceDate: Decodable {
     
     // 1 = January, 12 = December
     let month: Int

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PastExperience: Codable {
+struct PastExperience: Decodable {
     
     let companyName: String
     let companyLogoURL: String
