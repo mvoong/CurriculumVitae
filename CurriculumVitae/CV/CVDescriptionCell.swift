@@ -10,5 +10,9 @@ import UIKit
 
 class CVDescriptionCell: UITableViewCell {
     
-    @IBOutlet weak var label: UILabel?
+    @IBOutlet private weak var label: UILabel?
+    
+    func setText(_ text: String) {
+        self.label?.text = text
+    }
 }

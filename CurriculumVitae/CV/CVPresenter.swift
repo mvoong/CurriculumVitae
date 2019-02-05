@@ -50,6 +50,9 @@ class CVPresenter {
     private func createPastExperienceSections(cv: CurriculumVitae) -> [CVSection] {
         return cv.pastExperience.map { experience in
             var items = [TableItem]()
+            if let url = URL(string: experience.companyLogoURL) {
+                items.append(CVLogoItem(imageURL: url))
+            }
             items.append(CVDescriptionItem(string: experience.roleName))
             items.append(CVDescriptionItem(string: "\(experience.dateFrom.displayableDate()) - \(experience.dateTo.displayableDate())"))
             items.append(CVDescriptionItem(string: experience.description))

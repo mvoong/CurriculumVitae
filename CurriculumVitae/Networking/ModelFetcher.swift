@@ -29,7 +29,7 @@ struct ModelFetcher: ModelFetcherProtocol {
     }
     
     func fetch<T>(type: T.Type, url: URL, completion: @escaping (Result<T, ModelFetcherError>) -> Void) where T: Decodable {
-        self.requestExecuter.requestJSON(url: url) { result in
+        self.requestExecuter.requestData(url: url) { result in
             switch result {
             case .success(let data):
                 do {

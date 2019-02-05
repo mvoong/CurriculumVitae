@@ -69,7 +69,16 @@ extension CVDescriptionItem {
     
     func dequeueCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(type: CVDescriptionCell.self, identifier: "DescriptionIdentifier", indexPath: indexPath)
-        cell.label?.text = self.string
+        cell.setText(self.string)
+        return cell
+    }
+}
+
+extension CVLogoItem {
+    
+    func dequeueCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(type: CVLogoCell.self, identifier: "LogoIdentifier", indexPath: indexPath)
+        cell.setLogo(url: self.imageURL, assetFetcher: AssetFetcher.shared)
         return cell
     }
 }

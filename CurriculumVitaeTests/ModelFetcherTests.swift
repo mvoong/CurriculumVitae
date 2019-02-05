@@ -19,12 +19,12 @@ class ModelFetcherTests: XCTestCase {
     let stubRequestExecuter = StubRequestExecuter()
     let exampleURL = URL(string: "https://example.com")!
     
-    func testFetchCallsRequestJSONWithCorrectURL() {
+    func testFetchCallsrequestDataWithCorrectURL() {
         let fetcher = ModelFetcher(requestExecuter: self.stubRequestExecuter)
         
         fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { _ in }
         
-        XCTAssertEqual(self.stubRequestExecuter.requestJSONCalled?.url, self.exampleURL)
+        XCTAssertEqual(self.stubRequestExecuter.requestDataCalled?.url, self.exampleURL)
     }
     
     func testFetchCallsCompletionWithNetworkError() {
@@ -35,7 +35,7 @@ class ModelFetcherTests: XCTestCase {
         fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
             completionCalledWithResult = result
         }
-        self.stubRequestExecuter.requestJSONCalled?.completion(.failure(.foundationError(error)))
+        self.stubRequestExecuter.requestDataCalled?.completion(.failure(.foundationError(error)))
         
         if case .failure(let error)? = completionCalledWithResult {
             XCTAssertEqual(error, .networkError)
@@ -55,7 +55,7 @@ class ModelFetcherTests: XCTestCase {
         fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
             completionCalledWithResult = result
         }
-        self.stubRequestExecuter.requestJSONCalled?.completion(.success(data))
+        self.stubRequestExecuter.requestDataCalled?.completion(.success(data))
         
         if case .success(let object)? = completionCalledWithResult {
             XCTAssertEqual(object.string, "Example string")
@@ -70,7 +70,7 @@ class ModelFetcherTests: XCTestCase {
         fetcher.fetch(type: ExampleDecodable.self, url: self.exampleURL) { result in
             completionCalledWithResult = result
         }
-        self.stubRequestExecuter.requestJSONCalled?.completion(.success(data))
+        self.stubRequestExecuter.requestDataCalled?.completion(.success(data))
         
         if case .failure(let error)? = completionCalledWithResult {
             XCTAssertEqual(error, .decodingError)
