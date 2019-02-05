@@ -42,6 +42,7 @@
 		2750A1E621FB55D500D744B8 /* CVInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E521FB55D500D744B8 /* CVInteractorTests.swift */; };
 		2750A1E821FB560400D744B8 /* StubModelFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E721FB560400D744B8 /* StubModelFetcher.swift */; };
 		2750A1EA21FB5CE800D744B8 /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E921FB5CE800D744B8 /* UITableView+Helper.swift */; };
+		27AA0FC52209E701009685A6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA0FC42209E701009685A6 /* NetworkRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		2750A1E521FB55D500D744B8 /* CVInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVInteractorTests.swift; sourceTree = "<group>"; };
 		2750A1E721FB560400D744B8 /* StubModelFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubModelFetcher.swift; sourceTree = "<group>"; };
 		2750A1E921FB5CE800D744B8 /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
+		27AA0FC42209E701009685A6 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				2750A1BE21FB322900D744B8 /* URLSessionProtocol.swift */,
 				27328B8721FF18AA00601618 /* AssetFetcher.swift */,
 				27328B8D21FF21F200601618 /* AssetFetcherQueue.swift */,
+				27AA0FC42209E701009685A6 /* NetworkRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				27328B8221FF129400601618 /* CVSection.swift in Sources */,
 				2750A1BA21FA254100D744B8 /* ModelFetcher.swift in Sources */,
 				2750A1D821FB4DCC00D744B8 /* CVDescriptionCell.swift in Sources */,
+				27AA0FC52209E701009685A6 /* NetworkRequest.swift in Sources */,
 				2750A1B321FA222400D744B8 /* PastExperience.swift in Sources */,
 				2750A1D121FB3CEC00D744B8 /* CVInteractor.swift in Sources */,
 				2750A1EA21FB5CE800D744B8 /* UITableView+Helper.swift in Sources */,
