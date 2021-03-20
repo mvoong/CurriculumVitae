@@ -22,23 +22,29 @@ protocol ModelFetcherProtocol {
 
 struct ModelFetcher: ModelFetcherProtocol {
     
-    private let requestExecuter: RequestExecuterProtocol
+    private let queue: ModelFetcherQueueProtocol
     private let jsonDecoder = JSONDecoder()
     
-    init(requestExecuter: RequestExecuterProtocol) {
-        self.requestExecuter = requestExecuter
+    init(queue: ModelFetcherQueueProtocol) {
+        self.queue = queue
     }
     
     func fetch<T>(type: T.Type, request: NetworkRequest<T>) where T: Decodable {
-        self.requestExecuter.requestData(url: request.url) { result in
+        // Start request at some point in time
+        self.queue.enqueueRequest(request: request) { result in
             switch result {
             case .success(let data):
-                do {
-                    let model = try self.jsonDecoder.decode(T.self, from: data)
-                    request.completion(.success(model))
-                } catch {
-                    request.completion(.failure(.decodingError))
-                    
+                DispatchQueue.global(qos: .default).async {
+                    do {
+                        let model = try self.jsonDecoder.decode(T.self, from: data)
+                        DispatchQueue.main.async {
+                            request.completion(.success(model))
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            request.completion(.failure(.decodingError))
+                        }
+                    }
                 }
             case .failure:
                 request.completion(.failure(.networkError))

@@ -11,7 +11,7 @@ import UIKit
 class CVViewController: UIViewController {
 
     private lazy var presenter: CVPresenter = {
-        let modelFetcher = ModelFetcher(requestExecuter: RequestExecuter(urlSession: URLSession.shared))
+        let modelFetcher = ModelFetcher(queue: ModelFetcherQueue(requestExecuter: RequestExecuter(urlSession: URLSession.shared)))
         return CVPresenter(interactor: CVInteractor(modelFetcher: modelFetcher))
     }()
 

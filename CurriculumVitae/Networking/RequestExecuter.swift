@@ -10,15 +10,15 @@ import Foundation
 
 protocol RequestExecuterProtocol {
     
-    func requestData(url: URL, completion: @escaping (Result<Data, RequestExecuter.RequestExecuterError>) -> Void)
+    func requestData(url: URL, completion: @escaping (Result<Data, RequestExecuterError>) -> Void)
+}
+
+enum RequestExecuterError: Error {
+    
+    case foundationError(Error)
 }
 
 struct RequestExecuter: RequestExecuterProtocol {
-    
-    enum RequestExecuterError: Error {
-        
-        case foundationError(Error)
-    }
     
     private let urlSession: URLSessionProtocol
     
@@ -28,13 +28,15 @@ struct RequestExecuter: RequestExecuterProtocol {
     
     func requestData(url: URL, completion: @escaping (Result<Data, RequestExecuterError>) -> Void) {
         let task = self.urlSession.dataTask(with: url) { data, _, error in
-            if let error = error {
-                completion(.failure(.foundationError(error)))
-                return
-            }
-            
-            if let data = data {
-                completion(.success(data))
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(.failure(.foundationError(error)))
+                    return
+                }
+                
+                if let data = data {
+                    completion(.success(data))
+                }
             }
         }
         task.resume()

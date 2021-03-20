@@ -23,12 +23,7 @@
 		2750A1B521FA228300D744B8 /* PastExperienceDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B421FA228300D744B8 /* PastExperienceDate.swift */; };
 		2750A1B821FA233700D744B8 /* RequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B721FA233700D744B8 /* RequestExecuter.swift */; };
 		2750A1BA21FA254100D744B8 /* ModelFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1B921FA254100D744B8 /* ModelFetcher.swift */; };
-		2750A1BC21FB31D800D744B8 /* RequestExecuterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1BB21FB31D800D744B8 /* RequestExecuterTests.swift */; };
 		2750A1BF21FB322900D744B8 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1BE21FB322900D744B8 /* URLSessionProtocol.swift */; };
-		2750A1C121FB32D100D744B8 /* StubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C021FB32D100D744B8 /* StubURLSession.swift */; };
-		2750A1C321FB334200D744B8 /* SpyURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C221FB334200D744B8 /* SpyURLSessionDataTask.swift */; };
-		2750A1C521FB364900D744B8 /* ModelFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C421FB364900D744B8 /* ModelFetcherTests.swift */; };
-		2750A1C721FB369700D744B8 /* StubRequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1C621FB369700D744B8 /* StubRequestExecuter.swift */; };
 		2750A1CB21FB3A1000D744B8 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1CA21FB3A1000D744B8 /* MainRouter.swift */; };
 		2750A1CD21FB3BC900D744B8 /* CVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1CC21FB3BC900D744B8 /* CVViewController.swift */; };
 		2750A1CF21FB3CE500D744B8 /* CVPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1CE21FB3CE500D744B8 /* CVPresenter.swift */; };
@@ -37,23 +32,11 @@
 		2750A1D621FB465D00D744B8 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1D521FB465D00D744B8 /* TableSection.swift */; };
 		2750A1D821FB4DCC00D744B8 /* CVDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1D721FB4DCC00D744B8 /* CVDescriptionCell.swift */; };
 		2750A1E021FB527900D744B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2750A1DE21FB527900D744B8 /* Localizable.strings */; };
-		2750A1E221FB52FF00D744B8 /* CVPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E121FB52FF00D744B8 /* CVPresenterTests.swift */; };
-		2750A1E421FB532E00D744B8 /* StubCVInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E321FB532E00D744B8 /* StubCVInteractor.swift */; };
-		2750A1E621FB55D500D744B8 /* CVInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E521FB55D500D744B8 /* CVInteractorTests.swift */; };
-		2750A1E821FB560400D744B8 /* StubModelFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E721FB560400D744B8 /* StubModelFetcher.swift */; };
 		2750A1EA21FB5CE800D744B8 /* UITableView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750A1E921FB5CE800D744B8 /* UITableView+Helper.swift */; };
 		27AA0FC52209E701009685A6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA0FC42209E701009685A6 /* NetworkRequest.swift */; };
+		27AA0FC72209EB0B009685A6 /* ModelFetcherQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA0FC62209EB0B009685A6 /* ModelFetcherQueue.swift */; };
+		27AA0FC92209EFB0009685A6 /* DeferredNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA0FC82209EFB0009685A6 /* DeferredNetworkRequest.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2750A1A121FA1C0000D744B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2750A18421FA1BFF00D744B8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2750A18B21FA1BFF00D744B8;
-			remoteInfo = CurriculumVitae;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		27328B8121FF129400601618 /* CVSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSection.swift; sourceTree = "<group>"; };
@@ -69,19 +52,13 @@
 		2750A19621FA1C0000D744B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2750A19921FA1C0000D744B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2750A19B21FA1C0000D744B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2750A1A021FA1C0000D744B8 /* CurriculumVitaeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurriculumVitaeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2750A1A621FA1C0000D744B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2750A1B021FA220600D744B8 /* CurriculumVitae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriculumVitae.swift; sourceTree = "<group>"; };
 		2750A1B221FA222400D744B8 /* PastExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastExperience.swift; sourceTree = "<group>"; };
 		2750A1B421FA228300D744B8 /* PastExperienceDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastExperienceDate.swift; sourceTree = "<group>"; };
 		2750A1B721FA233700D744B8 /* RequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuter.swift; sourceTree = "<group>"; };
 		2750A1B921FA254100D744B8 /* ModelFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFetcher.swift; sourceTree = "<group>"; };
-		2750A1BB21FB31D800D744B8 /* RequestExecuterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuterTests.swift; sourceTree = "<group>"; };
 		2750A1BE21FB322900D744B8 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
-		2750A1C021FB32D100D744B8 /* StubURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubURLSession.swift; sourceTree = "<group>"; };
-		2750A1C221FB334200D744B8 /* SpyURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyURLSessionDataTask.swift; sourceTree = "<group>"; };
-		2750A1C421FB364900D744B8 /* ModelFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFetcherTests.swift; sourceTree = "<group>"; };
-		2750A1C621FB369700D744B8 /* StubRequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubRequestExecuter.swift; sourceTree = "<group>"; };
 		2750A1CA21FB3A1000D744B8 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		2750A1CC21FB3BC900D744B8 /* CVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewController.swift; sourceTree = "<group>"; };
 		2750A1CE21FB3CE500D744B8 /* CVPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPresenter.swift; sourceTree = "<group>"; };
@@ -90,23 +67,14 @@
 		2750A1D521FB465D00D744B8 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		2750A1D721FB4DCC00D744B8 /* CVDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDescriptionCell.swift; sourceTree = "<group>"; };
 		2750A1DF21FB527900D744B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2750A1E121FB52FF00D744B8 /* CVPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPresenterTests.swift; sourceTree = "<group>"; };
-		2750A1E321FB532E00D744B8 /* StubCVInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubCVInteractor.swift; sourceTree = "<group>"; };
-		2750A1E521FB55D500D744B8 /* CVInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVInteractorTests.swift; sourceTree = "<group>"; };
-		2750A1E721FB560400D744B8 /* StubModelFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubModelFetcher.swift; sourceTree = "<group>"; };
 		2750A1E921FB5CE800D744B8 /* UITableView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Helper.swift"; sourceTree = "<group>"; };
 		27AA0FC42209E701009685A6 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		27AA0FC62209EB0B009685A6 /* ModelFetcherQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFetcherQueue.swift; sourceTree = "<group>"; };
+		27AA0FC82209EFB0009685A6 /* DeferredNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferredNetworkRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2750A18921FA1BFF00D744B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2750A19D21FA1C0000D744B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -129,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				2750A18C21FA1BFF00D744B8 /* CurriculumVitae.app */,
-				2750A1A021FA1C0000D744B8 /* CurriculumVitaeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,12 +122,7 @@
 		2750A1A321FA1C0000D744B8 /* CurriculumVitaeTests */ = {
 			isa = PBXGroup;
 			children = (
-				2750A1BD21FB321700D744B8 /* Stubs */,
 				2750A1A621FA1C0000D744B8 /* Info.plist */,
-				2750A1BB21FB31D800D744B8 /* RequestExecuterTests.swift */,
-				2750A1C421FB364900D744B8 /* ModelFetcherTests.swift */,
-				2750A1E121FB52FF00D744B8 /* CVPresenterTests.swift */,
-				2750A1E521FB55D500D744B8 /* CVInteractorTests.swift */,
 			);
 			path = CurriculumVitaeTests;
 			sourceTree = "<group>";
@@ -178,26 +140,16 @@
 		2750A1B621FA22E800D744B8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2750A1B721FA233700D744B8 /* RequestExecuter.swift */,
 				2750A1B921FA254100D744B8 /* ModelFetcher.swift */,
+				27AA0FC62209EB0B009685A6 /* ModelFetcherQueue.swift */,
+				27AA0FC42209E701009685A6 /* NetworkRequest.swift */,
+				27AA0FC82209EFB0009685A6 /* DeferredNetworkRequest.swift */,
+				2750A1B721FA233700D744B8 /* RequestExecuter.swift */,
 				2750A1BE21FB322900D744B8 /* URLSessionProtocol.swift */,
 				27328B8721FF18AA00601618 /* AssetFetcher.swift */,
 				27328B8D21FF21F200601618 /* AssetFetcherQueue.swift */,
-				27AA0FC42209E701009685A6 /* NetworkRequest.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		2750A1BD21FB321700D744B8 /* Stubs */ = {
-			isa = PBXGroup;
-			children = (
-				2750A1C021FB32D100D744B8 /* StubURLSession.swift */,
-				2750A1C221FB334200D744B8 /* SpyURLSessionDataTask.swift */,
-				2750A1C621FB369700D744B8 /* StubRequestExecuter.swift */,
-				2750A1E321FB532E00D744B8 /* StubCVInteractor.swift */,
-				2750A1E721FB560400D744B8 /* StubModelFetcher.swift */,
-			);
-			path = Stubs;
 			sourceTree = "<group>";
 		};
 		2750A1C921FB39F800D744B8 /* CV */ = {
@@ -246,24 +198,6 @@
 			productReference = 2750A18C21FA1BFF00D744B8 /* CurriculumVitae.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2750A19F21FA1C0000D744B8 /* CurriculumVitaeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2750A1AC21FA1C0000D744B8 /* Build configuration list for PBXNativeTarget "CurriculumVitaeTests" */;
-			buildPhases = (
-				2750A19C21FA1C0000D744B8 /* Sources */,
-				2750A19D21FA1C0000D744B8 /* Frameworks */,
-				2750A19E21FA1C0000D744B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2750A1A221FA1C0000D744B8 /* PBXTargetDependency */,
-			);
-			name = CurriculumVitaeTests;
-			productName = CurriculumVitaeTests;
-			productReference = 2750A1A021FA1C0000D744B8 /* CurriculumVitaeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -271,16 +205,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Meidi Limited";
 				TargetAttributes = {
 					2750A18B21FA1BFF00D744B8 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					2750A19F21FA1C0000D744B8 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
-						TestTargetID = 2750A18B21FA1BFF00D744B8;
 					};
 				};
 			};
@@ -298,7 +227,6 @@
 			projectRoot = "";
 			targets = (
 				2750A18B21FA1BFF00D744B8 /* CurriculumVitae */,
-				2750A19F21FA1C0000D744B8 /* CurriculumVitaeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -315,13 +243,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2750A19E21FA1C0000D744B8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -330,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27328B8A21FF1B1E00601618 /* CVLogoItem.swift in Sources */,
+				27AA0FC72209EB0B009685A6 /* ModelFetcherQueue.swift in Sources */,
 				27328B8821FF18AA00601618 /* AssetFetcher.swift in Sources */,
 				27328B8621FF139C00601618 /* Result.swift in Sources */,
 				2750A1D621FB465D00D744B8 /* TableSection.swift in Sources */,
@@ -341,6 +263,7 @@
 				2750A1B121FA220600D744B8 /* CurriculumVitae.swift in Sources */,
 				2750A1B521FA228300D744B8 /* PastExperienceDate.swift in Sources */,
 				2750A1BF21FB322900D744B8 /* URLSessionProtocol.swift in Sources */,
+				27AA0FC92209EFB0009685A6 /* DeferredNetworkRequest.swift in Sources */,
 				27328B8221FF129400601618 /* CVSection.swift in Sources */,
 				2750A1BA21FA254100D744B8 /* ModelFetcher.swift in Sources */,
 				2750A1D821FB4DCC00D744B8 /* CVDescriptionCell.swift in Sources */,
@@ -355,31 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2750A19C21FA1C0000D744B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2750A1E821FB560400D744B8 /* StubModelFetcher.swift in Sources */,
-				2750A1C121FB32D100D744B8 /* StubURLSession.swift in Sources */,
-				2750A1E621FB55D500D744B8 /* CVInteractorTests.swift in Sources */,
-				2750A1E421FB532E00D744B8 /* StubCVInteractor.swift in Sources */,
-				2750A1C721FB369700D744B8 /* StubRequestExecuter.swift in Sources */,
-				2750A1BC21FB31D800D744B8 /* RequestExecuterTests.swift in Sources */,
-				2750A1C321FB334200D744B8 /* SpyURLSessionDataTask.swift in Sources */,
-				2750A1C521FB364900D744B8 /* ModelFetcherTests.swift in Sources */,
-				2750A1E221FB52FF00D744B8 /* CVPresenterTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2750A1A221FA1C0000D744B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2750A18B21FA1BFF00D744B8 /* CurriculumVitae */;
-			targetProxy = 2750A1A121FA1C0000D744B8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2750A19321FA1BFF00D744B8 /* Main.storyboard */ = {
@@ -435,6 +334,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -460,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -496,6 +396,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -515,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -561,53 +462,6 @@
 			};
 			name = Release;
 		};
-		2750A1AD21FA1C0000D744B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = CurriculumVitaeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.meidi.CurriculumVitaeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurriculumVitae.app/CurriculumVitae";
-			};
-			name = Debug;
-		};
-		2750A1AE21FA1C0000D744B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = CurriculumVitaeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.co.meidi.CurriculumVitaeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurriculumVitae.app/CurriculumVitae";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -625,15 +479,6 @@
 			buildConfigurations = (
 				2750A1AA21FA1C0000D744B8 /* Debug */,
 				2750A1AB21FA1C0000D744B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2750A1AC21FA1C0000D744B8 /* Build configuration list for PBXNativeTarget "CurriculumVitaeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2750A1AD21FA1C0000D744B8 /* Debug */,
-				2750A1AE21FA1C0000D744B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
